@@ -10,16 +10,18 @@ public class UserDefinedExceptionTest {
 		person.payingBill();
 		
 		}
-		catch(NoBalanceException e) {
+		catch(NoBalanceException e) { //mandatory for checked exception
 			System.out.println("Handler 1: "+e);
 		}
-		catch(LessBalanceForGroceryException e) {
+		catch(LessBalanceForGroceryException e) { //not mandatory for unchecked exception
 			System.out.println("Handler 2: "+e);
 		}
-		catch(LessBalForElectricityException e) {
+		catch(LessBalForElectricityException e) { //not mandatory for unchecked exception
 			System.out.println("Handler 3: "+e);
 		}
-		
+		finally { //RUNS REGARDLESS OF THE EXCEPTION
+			System.out.println("Finally all bills are cleared..");
+		}
 	}
 
 }
@@ -44,7 +46,7 @@ class Person{
 		else {
 			
 			if(bal>10 && bal<50) {
-				LessBalanceForGroceryException lbge = new LessBalanceForGroceryException("Not enough money to buy groceries..");
+				LessBalanceForGroceryException lbge = new LessBalanceForGroceryException("Not enough money to pay groceries bill..");
 				throw lbge;
 			}
 			if(bal<80) {
@@ -54,7 +56,7 @@ class Person{
 			}
 			else
 			{
-				System.out.println("All bills cleared successfully..");
+				System.out.println("Payment is over..");
 			}
 		}
 	}
