@@ -28,7 +28,8 @@ public class UserDefinedExceptionTest {
 class Person{
 	
 	
-	void payingBill() {
+	void payingBill() throws NoBalanceException //since it is the mandatory checked exception
+	{
 		
 		System.out.println("Paying Bill..");
 		
