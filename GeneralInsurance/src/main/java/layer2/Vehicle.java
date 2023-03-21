@@ -2,19 +2,18 @@ package layer2;
 
 import java.sql.Date;
 
-public class Vehicle {
-
+public class Vehicle { //layer 2 POJO
+	
 	private String rcNumber;
 	private int chasisNumber;
 	private Date dateOfPurchase;
 	private String manufacturer;
 	private String engineNumber;
 	private String vehicleModel;
-	private double cost;
+	private float cost;
 	
 	public Vehicle() {
-		
-		System.out.println("Vehicle ctr()..");
+		System.out.println("Vehicle ctor()...");
 	}
 
 	public String getRcNumber() {
@@ -37,8 +36,8 @@ public class Vehicle {
 		return dateOfPurchase;
 	}
 
-	public void setDateOfPurchase(Date dateOfPurchase) {
-		this.dateOfPurchase = dateOfPurchase;
+	public void setDateOfPurchase(Date date) {
+		this.dateOfPurchase = date;
 	}
 
 	public String getManufacturer() {
@@ -65,11 +64,11 @@ public class Vehicle {
 		this.vehicleModel = vehicleModel;
 	}
 
-	public double getCost() {
+	public float getCost() {
 		return cost;
 	}
 
-	public void setCost(double cost) {
+	public void setCost(float cost) {
 		this.cost = cost;
 	}
 
@@ -79,13 +78,7 @@ public class Vehicle {
 				+ ", manufacturer=" + manufacturer + ", engineNumber=" + engineNumber + ", vehicleModel=" + vehicleModel
 				+ ", cost=" + cost + "]";
 	}
+	
+	
 
 }
-
-//rcNumber varchar(10) primary key,
-//chasisNumber int,
-//dateOfPurchase date,
-//manufacturer varchar(100),
-//engineNumber varchar(50),
-//vehicleModel varchar(60),
-//cost double

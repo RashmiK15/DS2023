@@ -59,7 +59,7 @@ public class DaoImplTest {
 		
 		System.out.println("started DAO testing..Add");
 		
-		VehicleDao vehicleDao = new VehicleDaoImpl();
+		VehicleDAO vehicleDao = new VehicleDAOImpl();
 		
 		Assertions.assertTrue(vehicleDao!=null); //go ahead only if object creation is successful
 		
@@ -77,7 +77,7 @@ public class DaoImplTest {
 		
 		System.out.println(vehicle);
 		
-		vehicleDao.addVehicle(vehicle);
+		vehicleDao.insertVehicle(vehicle);
 		System.out.println("Vehicle added");
 	}
 	
